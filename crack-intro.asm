@@ -27,18 +27,18 @@ BasicUpstart2(start)
                         *=$080d
                         //------------------------------------------------------------------------------
 start:
+                        lda #$08
+                        sta screen
+                        sta 646
+                        jsr $e544
+
                         lda #$37
                         sta $01
-
                         jsr reset
 
                         sei
                         ldx #$ff
                         txs
-                        lda #$08
-                        sta screen
-                        sta 646
-                        jsr $e544
 
                         lda #$00
                         sta border
